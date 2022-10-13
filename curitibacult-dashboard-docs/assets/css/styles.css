@@ -1,0 +1,18 @@
+@font-face { font-family: QuentinPro; src: url('../font/QuentinPro.ttf'); }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{ font-family: 'Roboto', sans-serif; } 
+
+/* Navbar */
+.navbar{ background: #E5631D;}
+
+.navbar-brand{ font-family: 'QuentinPro'; color: #fff !important;} 
+
+.navbar-brand span{ font-family: 'Roboto', sans-serif; font-size: 15px; }
+
+/* Page */
+.bg-white-orange { background-color: #fff2e1; }
+.bg-clear-orange { background-color: #ffe9c7;}

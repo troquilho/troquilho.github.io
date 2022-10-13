@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curitiba Cult for Developers</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Exo:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar mb-5">
+        <a class="navbar-brand" href="https://curitibacult.com.br">Curitiba Cult <span class="ml-1">for
+                developers</span></a>
+
+        <div>
+            <a href="#login" class="text-decoration-none font-weight-bold text-white">Login</a>
+            <a href="#padrinhos" class="text-decoration-none font-weight-bold text-white ml-3">Padrinhos</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+                <h2 class="mb-4 font-weight-bold">Guia de integração de Sistemas</h2>
+                <p class="text-justify">
+                    O acesso a API é um recurso disponível para desenvolvedores. As informações de acesso são
+                    passadas pelo nosso time. Para saber como
+                    configurar uma conta teste com acesso a API, entrar em contato com dev@curitibacult.com.br.
+                </p>
+            </div>
+        </div>
+        <div class="row mb-3 bg-clear-orange" id="login">
+            <div class="col-12">
+                <h2 class="my-3">Login</h2>
+                <p class="text-justify">
+                    Requisição de login normal de acesso aos padrinhos do Curitiba Cult. É retornado um <a
+                        href="https://swagger.io/docs/specification/authentication/bearer-authentication/"
+                        class="font-weight-bold">Bearer Token
+                        Authentication</a> que deve ser usado nas chamadas seguintes.
+                </p>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Fields</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-weight-bold">email</td>
+                                <td class="text-success font-weight-bold">String</td>
+                                <td class="text-danger font-weight-bold">true</td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-bold">password</td>
+                                <td class="text-success font-weight-bold">String</td>
+                                <td class="text-danger font-weight-bold">true</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 p-3">
+                <div class="row py-3 m-0 bg-white-orange rounded">
+                    <div class="col-12">
+                        <h3 class="mb-4">Request</h3>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Route</h5>
+                        <pre
+                            class="bg-light p-4 m-0"><span class="text-warning mr-2 font-weight-bold">POST</span> https://curitibacult-dashboard-api.herokuapp.com/api/auth/padrinhos/login</pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Header</h5>
+                        <pre class="bg-light p-4 m-0">Content-Type: application/json</pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Body</h5>
+                        <pre
+                            class="bg-light p-4 m-0">{<p class="mb-0 ml-4">"email": "email@teste.com.br",</p><p class="mb-0 ml-4">"password": "***"</p>}</pre>
+                    </div>
+                    <div class="col-12">
+                        <h3 class="mb-4">Response</h3>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Status</h5>
+                        <pre class="bg-light p-4 m-0"><span class="text-success mr-2 font-weight-bold">200</span></pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Body</h5>
+                        <pre class="bg-light p-4 m-0">{<p class="mb-0 ml-4">"token": "***"</p>}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3 bg-clear-orange" id="padrinhos">
+            <div class="col-12">
+                <h2 class="my-3">Padrinhos</h2>
+                <p class="text-justify">
+                    Requisições de acesso exclusivo às informações do Padrinho. Deve ser usado Token coletado no login
+                    para buscagem.
+                </p>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Fields</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Required</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 p-3">
+                <div class="row py-3 m-0 bg-white-orange rounded">
+                    <div class="col-12">
+                        <h3 class="mb-4">Request</h3>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Route</h5>
+                        <pre
+                            class="bg-light p-4 m-0"><span class="text-success mr-2 font-weight-bold">GET</span> https://curitibacult-dashboard-api.herokuapp.com/api/padrinhos</pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Header</h5>
+                        <div class="bg-light p-4">
+                            <pre class="m-0">Authorization: 'Bearer XXXX'</pre>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Body</h5>
+                        <pre class="bg-light p-4 m-0">{}</pre>
+                    </div>
+                    <div class="col-12">
+                        <h3 class="mb-4">Response</h3>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Status</h5>
+                        <pre class="bg-light p-4 m-0"><span class="text-success mr-2 font-weight-bold">200</span></pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Body</h5>
+                        <pre
+                            class="bg-light p-4 m-0">{<p class="mb-0 ml-4">"_id": "XXXX",</p><p class="mb-0 ml-4">"name": "Nome do Padrinho",</p><p class="mb-0 ml-4">"email": "email@teste.com.br",</p><p class="mb-0 ml-4">"status": "active",</p><p class="mb-0 ml-4">"firstAccess": true,</p><p class="mb-0 ml-4">"qrCode": "https://fakeimg.pl/250x250/F37321/fff/?text=curitibacult",</p><p class="mb-0 ml-4">"avatar": "https://fakeimg.pl/250x250/F37321/fff/?text=curitibacult"</p>}</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 p-3">
+                <div class="row py-3 m-0 bg-white-orange rounded">
+                    <div class="col-12">
+                        <h3 class="mb-4">Request</h3>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Route</h5>
+                        <pre
+                            class="bg-light p-4 m-0"><span class="text-danger mr-2 font-weight-bold">PUT</span> https://curitibacult-dashboard-api.herokuapp.com/api/padrinhos</pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Header</h5>
+                        <div class="bg-light p-4">
+                            <pre class="m-0">Content-Type: multipart/form-data</pre>
+                            <pre class="m-0">Authorization: 'Bearer XXXX'</pre>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Body</h5>
+                        <pre class="bg-light p-4 m-0">var FormData = require('form-data'); <br />var fs = require('fs'); <br />var data = new FormData(); <br /><br />data.append('name', 'Novo Nome do Padrinho'); <br />data.append('password', 'Nova senha do Padrinho'); <br />data.append('avatarImage', fs.createReadStream('/logo-curitibacult-topo.png'));
+                        </pre>
+                    </div>
+                    <div class="col-12">
+                        <h3 class="mb-4">Response</h3>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Status</h5>
+                        <pre class="bg-light p-4 m-0"><span class="text-success mr-2 font-weight-bold">200</span></pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Body</h5>
+                        <pre
+                            class="bg-light p-4 m-0">{<p class="mb-0 ml-4">"_id": "XXXX",</p><p class="mb-0 ml-4">"name": "Nome do Padrinho",</p><p class="mb-0 ml-4">"status": "active",</p><p class="mb-0 ml-4">"firstAccess": true,</p><p class="mb-0 ml-4">"qrCode": "https://fakeimg.pl/250x250/F37321/fff/?text=curitibacult",</p><p class="mb-0 ml-4">"avatar": "https://fakeimg.pl/250x250/F37321/fff/?text=curitibacult"</p>}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center small py-3 text-muted">
+                &copy; <a href="https://dashboardleads.com.br" class="text-muted" target="_Blank">Curitiba Cult</a> -
+                Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
