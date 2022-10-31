@@ -109,21 +109,8 @@
                 <h2 class="my-3">Padrinhos</h2>
                 <p class="text-justify">
                     Requisições de acesso exclusivo às informações do Padrinho. Deve ser usado Token coletado no login
-                    para buscagem.
+                    para busca.
                 </p>
-            </div>
-            <div class="col-12 mb-4">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Fields</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Required</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
             </div>
             <div class="col-12 p-3">
                 <div class="row py-3 m-0 bg-white-orange rounded">
@@ -156,6 +143,37 @@
                         <h5 class="mb-3">Body</h5>
                         <pre
                             class="bg-light p-4 m-0">{<p class="mb-0 ml-4">"_id": "XXXX",</p><p class="mb-0 ml-4">"name": "Nome do Padrinho",</p><p class="mb-0 ml-4">"email": "email@teste.com.br",</p><p class="mb-0 ml-4">"status": "active",</p><p class="mb-0 ml-4">"firstAccess": true,</p><p class="mb-0 ml-4">"qrCode": "https://fakeimg.pl/250x250/F37321/fff/?text=curitibacult",</p><p class="mb-0 ml-4">"avatar": "https://fakeimg.pl/250x250/F37321/fff/?text=curitibacult"</p>}</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 p-3">
+                <div class="row py-3 m-0 bg-white-orange rounded">
+                    <div class="col-12">
+                        <h3 class="mb-4">Request</h3>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Route</h5>
+                        <pre
+                            class="bg-light p-4 m-0"><span class="text-warning mr-2 font-weight-bold">POST</span> https://curitibacult-dashboard-api.herokuapp.com/api/novo-padrinho-app</pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Header</h5>
+                        <pre class="bg-light p-4 m-0">Content-Type: application/json</pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Body</h5>
+                        <pre class="bg-light p-4 m-0">{<p class="mb-0 ml-4">"name": "Nome teste",</p><p class="mb-0 ml-4">"email": "email@teste.com.br",</p><p class="mb-0 ml-4">"cpf": "XXX.XXX.XXX-XX",</p><p class="mb-0 ml-4">"phone": "(XX) XXXXX-XXXX",</p><p class="mb-0 ml-4">"password": "***"</p>}</pre>
+                    </div>
+                    <div class="col-12">
+                        <h3 class="mb-4">Response</h3>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Status</h5>
+                        <pre class="bg-light p-4 m-0"><span class="text-success mr-2 font-weight-bold">200</span></pre>
+                    </div>
+                    <div class="col-12 mb-4">
+                        <h5 class="mb-3">Body</h5>
+                        <pre class="bg-light p-4 m-0">{<p class="mb-0 ml-4">"status": "XXX",</p><p class="mb-0 ml-4">"msg": "XXXXX"</p>}</pre>
                     </div>
                 </div>
             </div>
